@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "fieldName": "cardNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bankNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sysNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typeCard",
+      "fieldType": "CardType",
+      "fieldValues": "HUMO"
+    },
+    {
+      "fieldName": "credit",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "balance",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "expireDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "card",
+      "otherEntityName": "client",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "client_id"
+    }
+  ],
+  "service": "no",
+  "readOnly": true,
+  "pagination": "no",
+  "name": "Card",
+  "changelogDate": "20211122115229"
+}

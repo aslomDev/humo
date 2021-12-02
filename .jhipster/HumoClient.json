@@ -1,0 +1,31 @@
+{
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "humoCard",
+      "otherEntityName": "humoCard",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "humoClient"
+    }
+  ],
+  "service": "serviceImpl",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "pagination",
+  "name": "HumoClient",
+  "changelogDate": "20211130081514"
+}

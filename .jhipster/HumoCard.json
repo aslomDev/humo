@@ -1,0 +1,48 @@
+{
+  "fields": [
+    {
+      "fieldName": "cardNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bankNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sysNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cardType",
+      "fieldType": "HUMO",
+      "fieldValues": "HUMO"
+    },
+    {
+      "fieldName": "credit",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "balance",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "expireDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "humoClient",
+      "otherEntityName": "humoClient",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "service": "serviceImpl",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "pagination",
+  "name": "HumoCard",
+  "changelogDate": "20211130080952"
+}

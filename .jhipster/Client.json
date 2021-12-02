@@ -1,0 +1,29 @@
+{
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "client",
+      "otherEntityName": "card",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "card"
+    }
+  ],
+  "service": "no",
+  "readOnly": true,
+  "pagination": "no",
+  "name": "Client",
+  "changelogDate": "20211122115848"
+}
