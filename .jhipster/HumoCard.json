@@ -28,6 +28,14 @@
     {
       "fieldName": "expireDate",
       "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "pan",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maskedPan",
+      "fieldType": "String"
     }
   ],
   "relationships": [

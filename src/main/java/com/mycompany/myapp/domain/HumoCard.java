@@ -43,6 +43,12 @@ public class HumoCard implements Serializable {
     @Column("expire_date")
     private LocalDate expireDate;
 
+    @Column("pan")
+    private String pan;
+
+    @Column("masked_pan")
+    private String maskedPan;
+
     @Transient
     @JsonIgnoreProperties(value = { "humoCards" }, allowSetters = true)
     private HumoClient humoClient;
@@ -156,6 +162,32 @@ public class HumoCard implements Serializable {
         this.expireDate = expireDate;
     }
 
+    public String getPan() {
+        return this.pan;
+    }
+
+    public HumoCard pan(String pan) {
+        this.setPan(pan);
+        return this;
+    }
+
+    public void setPan(String pan) {
+        this.pan = pan;
+    }
+
+    public String getMaskedPan() {
+        return this.maskedPan;
+    }
+
+    public HumoCard maskedPan(String maskedPan) {
+        this.setMaskedPan(maskedPan);
+        return this;
+    }
+
+    public void setMaskedPan(String maskedPan) {
+        this.maskedPan = maskedPan;
+    }
+
     public HumoClient getHumoClient() {
         return this.humoClient;
     }
@@ -209,6 +241,8 @@ public class HumoCard implements Serializable {
             ", credit='" + getCredit() + "'" +
             ", balance=" + getBalance() +
             ", expireDate='" + getExpireDate() + "'" +
+            ", pan='" + getPan() + "'" +
+            ", maskedPan='" + getMaskedPan() + "'" +
             "}";
     }
 }

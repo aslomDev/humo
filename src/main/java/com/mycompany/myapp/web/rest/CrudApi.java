@@ -3,9 +3,11 @@ package com.mycompany.myapp.web.rest;
 
 import com.mycompany.myapp.security.AuthoritiesConstants;
 import com.mycompany.myapp.service.CrudService;
+import com.mycompany.myapp.service.mq.dto.RequestDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
@@ -21,7 +23,7 @@ public class CrudApi {
 
     @PostMapping("/add")
     @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
-    public Mono<ResponseEntity<?>> crud(){
-       return Mono.just(ResponseEntity.ok(crudService.createCrud()));
+    public Mono<ResponseEntity<?>> crud(@RequestBody RequestDTO requestDTO){
+       return Mono.just(ResponseEntity.ok(crudService.save1(requestDTO)));
     }
 }

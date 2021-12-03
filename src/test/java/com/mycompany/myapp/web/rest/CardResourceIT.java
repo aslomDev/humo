@@ -58,6 +58,12 @@ class CardResourceIT {
     private static final LocalDate DEFAULT_EXPIRE_DATE = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_EXPIRE_DATE = LocalDate.now(ZoneId.systemDefault());
 
+    private static final String DEFAULT_PAN = "AAAAAAAAAA";
+    private static final String UPDATED_PAN = "BBBBBBBBBB";
+
+    private static final String DEFAULT_MASKED_PAN = "AAAAAAAAAA";
+    private static final String UPDATED_MASKED_PAN = "BBBBBBBBBB";
+
     private static final String ENTITY_API_URL = "/api/cards";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -89,7 +95,9 @@ class CardResourceIT {
             .typeCard(DEFAULT_TYPE_CARD)
             .credit(DEFAULT_CREDIT)
             .balance(DEFAULT_BALANCE)
-            .expireDate(DEFAULT_EXPIRE_DATE);
+            .expireDate(DEFAULT_EXPIRE_DATE)
+            .pan(DEFAULT_PAN)
+            .maskedPan(DEFAULT_MASKED_PAN);
         return card;
     }
 
@@ -107,7 +115,9 @@ class CardResourceIT {
             .typeCard(UPDATED_TYPE_CARD)
             .credit(UPDATED_CREDIT)
             .balance(UPDATED_BALANCE)
-            .expireDate(UPDATED_EXPIRE_DATE);
+            .expireDate(UPDATED_EXPIRE_DATE)
+            .pan(UPDATED_PAN)
+            .maskedPan(UPDATED_MASKED_PAN);
         return card;
     }
 
@@ -160,6 +170,8 @@ class CardResourceIT {
         assertThat(testCard.getCredit()).isEqualTo(DEFAULT_CREDIT);
         assertThat(testCard.getBalance()).isEqualByComparingTo(DEFAULT_BALANCE);
         assertThat(testCard.getExpireDate()).isEqualTo(DEFAULT_EXPIRE_DATE);
+        assertThat(testCard.getPan()).isEqualTo(DEFAULT_PAN);
+        assertThat(testCard.getMaskedPan()).isEqualTo(DEFAULT_MASKED_PAN);
     }
 
     @Test
@@ -193,7 +205,11 @@ class CardResourceIT {
             .jsonPath("$.[*].balance")
             .value(hasItem(sameNumber(DEFAULT_BALANCE)))
             .jsonPath("$.[*].expireDate")
-            .value(hasItem(DEFAULT_EXPIRE_DATE.toString()));
+            .value(hasItem(DEFAULT_EXPIRE_DATE.toString()))
+            .jsonPath("$.[*].pan")
+            .value(hasItem(DEFAULT_PAN))
+            .jsonPath("$.[*].maskedPan")
+            .value(hasItem(DEFAULT_MASKED_PAN));
     }
 
     @Test
@@ -227,7 +243,11 @@ class CardResourceIT {
             .jsonPath("$.balance")
             .value(is(sameNumber(DEFAULT_BALANCE)))
             .jsonPath("$.expireDate")
-            .value(is(DEFAULT_EXPIRE_DATE.toString()));
+            .value(is(DEFAULT_EXPIRE_DATE.toString()))
+            .jsonPath("$.pan")
+            .value(is(DEFAULT_PAN))
+            .jsonPath("$.maskedPan")
+            .value(is(DEFAULT_MASKED_PAN));
     }
 
     @Test

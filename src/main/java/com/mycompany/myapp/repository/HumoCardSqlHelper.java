@@ -18,6 +18,8 @@ public class HumoCardSqlHelper {
         columns.add(Column.aliased("credit", table, columnPrefix + "_credit"));
         columns.add(Column.aliased("balance", table, columnPrefix + "_balance"));
         columns.add(Column.aliased("expire_date", table, columnPrefix + "_expire_date"));
+        columns.add(Column.aliased("pan", table, columnPrefix + "_pan"));
+        columns.add(Column.aliased("masked_pan", table, columnPrefix + "_masked_pan"));
 
         columns.add(Column.aliased("humo_client_id", table, columnPrefix + "_humo_client_id"));
         return columns;

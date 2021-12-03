@@ -28,6 +28,10 @@ public class HumoCardDTO implements Serializable {
 
     private Date expireDate;
 
+    private String pan;
+
+    private String maskedPan;
+
     private HumoClientDTO humoClient;
 
     public Long getId() {
@@ -94,6 +98,22 @@ public class HumoCardDTO implements Serializable {
         this.expireDate = expireDate;
     }
 
+    public String getPan() {
+        return pan;
+    }
+
+    public void setPan(String pan) {
+        this.pan = pan;
+    }
+
+    public String getMaskedPan() {
+        return maskedPan;
+    }
+
+    public void setMaskedPan(String maskedPan) {
+        this.maskedPan = maskedPan;
+    }
+
     public HumoClientDTO getHumoClient() {
         return humoClient;
     }
@@ -135,6 +155,8 @@ public class HumoCardDTO implements Serializable {
             ", credit='" + getCredit() + "'" +
             ", balance=" + getBalance() +
             ", expireDate='" + getExpireDate() + "'" +
+            ", pan='" + getPan() + "'" +
+            ", maskedPan='" + getMaskedPan() + "'" +
             ", humoClient=" + getHumoClient() +
             "}";
     }

@@ -35,6 +35,12 @@
             <column name="expire_date" type="date">
                 <constraints nullable="true" />
             </column>
+            <column name="pan" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="masked_pan" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="humo_client_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -66,6 +72,8 @@
             <column name="credit" type="boolean"/>
             <column name="balance" type="numeric"/>
             <column name="expire_date" type="date"/>
+            <column name="pan" type="string"/>
+            <column name="masked_pan" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

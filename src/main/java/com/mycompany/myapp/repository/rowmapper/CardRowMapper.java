@@ -36,6 +36,8 @@ public class CardRowMapper implements BiFunction<Row, String, Card> {
         entity.setCredit(converter.fromRow(row, prefix + "_credit", Boolean.class));
         entity.setBalance(converter.fromRow(row, prefix + "_balance", BigDecimal.class));
         entity.setExpireDate(converter.fromRow(row, prefix + "_expire_date", LocalDate.class));
+        entity.setPan(converter.fromRow(row, prefix + "_pan", String.class));
+        entity.setMaskedPan(converter.fromRow(row, prefix + "_masked_pan", String.class));
         entity.setCardId(converter.fromRow(row, prefix + "_card_id", Long.class));
         return entity;
     }

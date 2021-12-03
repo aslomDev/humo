@@ -6,7 +6,6 @@ import com.mycompany.myapp.service.ColumnConverter;
 import io.r2dbc.spi.Row;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.function.BiFunction;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +36,8 @@ public class HumoCardRowMapper implements BiFunction<Row, String, HumoCard> {
         entity.setCredit(converter.fromRow(row, prefix + "_credit", Boolean.class));
         entity.setBalance(converter.fromRow(row, prefix + "_balance", BigDecimal.class));
         entity.setExpireDate(converter.fromRow(row, prefix + "_expire_date", LocalDate.class));
+        entity.setPan(converter.fromRow(row, prefix + "_pan", String.class));
+        entity.setMaskedPan(converter.fromRow(row, prefix + "_masked_pan", String.class));
         entity.setHumoClientId(converter.fromRow(row, prefix + "_humo_client_id", Long.class));
         return entity;
     }

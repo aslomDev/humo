@@ -1,11 +1,11 @@
-id;card_number;bank_number;sys_number;type_card;credit;balance;expire_date
-1;мобильный partnerships;generate;exploit;HUMO;false;90493;2021-11-21
-2;deploy;Guarani;Ведущий онлайн;HUMO;false;20062;2021-11-22
-3;Berkshire техник Международный;излишний web-enabled;Rupee Hryvnia Деревянный;HUMO;false;80809;2021-11-22
-4;сжатие Сирия Shilling;темно-фиолетовый Account withdrawal;payment пр.;HUMO;true;36421;2021-11-22
-5;компьютеры Резиновый;scalable синтезировать;сокет Исландия;HUMO;false;67777;2021-11-22
-6;Клатч мобильный;Savings многобайтный Куртка;interfaces;HUMO;false;88826;2021-11-21
-7;вычисление;invoice Нижегородская Эргономичный;visionary;HUMO;false;33659;2021-11-21
-8;e-business Versatile invoice;Амурская Сан-Томе;беспроводной;HUMO;false;23583;2021-11-22
-9;основной front-end цифровой;маркетинговый Маленький квантифицировать;zero;HUMO;false;74157;2021-11-21
-10;Деревянный Account;Носки;передатчик Lebanese vertical;HUMO;true;32727;2021-11-21
+id;card_number;bank_number;sys_number;type_card;credit;balance;expire_date;pan;masked_pan
+1;мобильный partnerships;generate;exploit;HUMO;false;90493;2021-11-21;deploy;Guarani
+2;Ведущий онлайн;eyeballs;Berkshire техник Международный;HUMO;true;41637;2021-11-22;маркетинговый;invoice шифрование Большой
+3;кросс-платформенный;intuitive перезагрузить продукт;область;HUMO;true;65740;2021-11-22;expedite AGP;value-added Гранитный Organized
+4;планировщик твердотельный кортеж;multi-tasking service-desk cross-platform;Клатч мобильный;HUMO;true;21040;2021-11-22;Home Auto interfaces;success Автомобильное конденсатор
+5;генерировать attitude-oriented Savings;Borders open-source e-business;архитектор;HUMO;true;53460;2021-11-21;intermediate;золотой
+6;Croatian Галантерея;frame;цифровой разобрать;HUMO;false;7882;2021-11-21;Фантастический zero Гамбия;deposit Кожанный Azerbaijanian
+7;Практичный передача;Великолепный Глобальный;bricks-and-clicks;HUMO;false;85251;2021-11-22;Re-contextualized переопределение;Cambridgeshire experiences
+8;винчестер беспроводной Невероятный;data-warehouse asymmetric functionalities;Стол redefine;HUMO;true;83602;2021-11-21;НМЖД Областной transform;Пластиковый
+9;Эргономичный обход compelling;монитор Ремень мобильный;envisioneer standardization;HUMO;false;15770;2021-11-21;Натуральный;Right-sized
+10;clicks-and-mortar Кожанный front-end;Хлопковый;communities ADP обувь;HUMO;false;13453;2021-11-21;frame нейронный;workforce

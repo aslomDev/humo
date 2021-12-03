@@ -60,6 +60,12 @@ class HumoCardResourceIT {
     private static final LocalDate DEFAULT_EXPIRE_DATE = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_EXPIRE_DATE = LocalDate.now(ZoneId.systemDefault());
 
+    private static final String DEFAULT_PAN = "AAAAAAAAAA";
+    private static final String UPDATED_PAN = "BBBBBBBBBB";
+
+    private static final String DEFAULT_MASKED_PAN = "AAAAAAAAAA";
+    private static final String UPDATED_MASKED_PAN = "BBBBBBBBBB";
+
     private static final String ENTITY_API_URL = "/api/humo-cards";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -93,8 +99,10 @@ class HumoCardResourceIT {
             .sysNumber(DEFAULT_SYS_NUMBER)
             .cardType(DEFAULT_CARD_TYPE)
             .credit(DEFAULT_CREDIT)
-            .balance(DEFAULT_BALANCE);
-//            .expireDate(DEFAULT_EXPIRE_DATE);
+            .balance(DEFAULT_BALANCE)
+            .expireDate(DEFAULT_EXPIRE_DATE)
+            .pan(DEFAULT_PAN)
+            .maskedPan(DEFAULT_MASKED_PAN);
         return humoCard;
     }
 
@@ -111,8 +119,10 @@ class HumoCardResourceIT {
             .sysNumber(UPDATED_SYS_NUMBER)
             .cardType(UPDATED_CARD_TYPE)
             .credit(UPDATED_CREDIT)
-            .balance(UPDATED_BALANCE);
-//            .expireDate(UPDATED_EXPIRE_DATE);
+            .balance(UPDATED_BALANCE)
+            .expireDate(UPDATED_EXPIRE_DATE)
+            .pan(UPDATED_PAN)
+            .maskedPan(UPDATED_MASKED_PAN);
         return humoCard;
     }
 
@@ -160,6 +170,8 @@ class HumoCardResourceIT {
         assertThat(testHumoCard.getCredit()).isEqualTo(DEFAULT_CREDIT);
         assertThat(testHumoCard.getBalance()).isEqualByComparingTo(DEFAULT_BALANCE);
         assertThat(testHumoCard.getExpireDate()).isEqualTo(DEFAULT_EXPIRE_DATE);
+        assertThat(testHumoCard.getPan()).isEqualTo(DEFAULT_PAN);
+        assertThat(testHumoCard.getMaskedPan()).isEqualTo(DEFAULT_MASKED_PAN);
     }
 
     @Test
@@ -216,7 +228,11 @@ class HumoCardResourceIT {
             .jsonPath("$.[*].balance")
             .value(hasItem(sameNumber(DEFAULT_BALANCE)))
             .jsonPath("$.[*].expireDate")
-            .value(hasItem(DEFAULT_EXPIRE_DATE.toString()));
+            .value(hasItem(DEFAULT_EXPIRE_DATE.toString()))
+            .jsonPath("$.[*].pan")
+            .value(hasItem(DEFAULT_PAN))
+            .jsonPath("$.[*].maskedPan")
+            .value(hasItem(DEFAULT_MASKED_PAN));
     }
 
     @Test
@@ -250,7 +266,11 @@ class HumoCardResourceIT {
             .jsonPath("$.balance")
             .value(is(sameNumber(DEFAULT_BALANCE)))
             .jsonPath("$.expireDate")
-            .value(is(DEFAULT_EXPIRE_DATE.toString()));
+            .value(is(DEFAULT_EXPIRE_DATE.toString()))
+            .jsonPath("$.pan")
+            .value(is(DEFAULT_PAN))
+            .jsonPath("$.maskedPan")
+            .value(is(DEFAULT_MASKED_PAN));
     }
 
     @Test
@@ -280,8 +300,10 @@ class HumoCardResourceIT {
             .sysNumber(UPDATED_SYS_NUMBER)
             .cardType(UPDATED_CARD_TYPE)
             .credit(UPDATED_CREDIT)
-            .balance(UPDATED_BALANCE);
-//            .expireDate(UPDATED_EXPIRE_DATE);
+            .balance(UPDATED_BALANCE)
+            .expireDate(UPDATED_EXPIRE_DATE)
+            .pan(UPDATED_PAN)
+            .maskedPan(UPDATED_MASKED_PAN);
         HumoCardDTO humoCardDTO = humoCardMapper.toDto(updatedHumoCard);
 
         webTestClient
@@ -304,6 +326,8 @@ class HumoCardResourceIT {
         assertThat(testHumoCard.getCredit()).isEqualTo(UPDATED_CREDIT);
         assertThat(testHumoCard.getBalance()).isEqualTo(UPDATED_BALANCE);
         assertThat(testHumoCard.getExpireDate()).isEqualTo(UPDATED_EXPIRE_DATE);
+        assertThat(testHumoCard.getPan()).isEqualTo(UPDATED_PAN);
+        assertThat(testHumoCard.getMaskedPan()).isEqualTo(UPDATED_MASKED_PAN);
     }
 
     @Test
@@ -389,8 +413,10 @@ class HumoCardResourceIT {
         partialUpdatedHumoCard
             .cardNumber(UPDATED_CARD_NUMBER)
             .credit(UPDATED_CREDIT)
-            .balance(UPDATED_BALANCE);
-//            .expireDate(UPDATED_EXPIRE_DATE);
+            .balance(UPDATED_BALANCE)
+            .expireDate(UPDATED_EXPIRE_DATE)
+            .pan(UPDATED_PAN)
+            .maskedPan(UPDATED_MASKED_PAN);
 
         webTestClient
             .patch()
@@ -412,6 +438,8 @@ class HumoCardResourceIT {
         assertThat(testHumoCard.getCredit()).isEqualTo(UPDATED_CREDIT);
         assertThat(testHumoCard.getBalance()).isEqualByComparingTo(UPDATED_BALANCE);
         assertThat(testHumoCard.getExpireDate()).isEqualTo(UPDATED_EXPIRE_DATE);
+        assertThat(testHumoCard.getPan()).isEqualTo(UPDATED_PAN);
+        assertThat(testHumoCard.getMaskedPan()).isEqualTo(UPDATED_MASKED_PAN);
     }
 
     @Test
@@ -431,8 +459,10 @@ class HumoCardResourceIT {
             .sysNumber(UPDATED_SYS_NUMBER)
             .cardType(UPDATED_CARD_TYPE)
             .credit(UPDATED_CREDIT)
-            .balance(UPDATED_BALANCE);
-//            .expireDate(UPDATED_EXPIRE_DATE);
+            .balance(UPDATED_BALANCE)
+            .expireDate(UPDATED_EXPIRE_DATE)
+            .pan(UPDATED_PAN)
+            .maskedPan(UPDATED_MASKED_PAN);
 
         webTestClient
             .patch()
@@ -454,6 +484,8 @@ class HumoCardResourceIT {
         assertThat(testHumoCard.getCredit()).isEqualTo(UPDATED_CREDIT);
         assertThat(testHumoCard.getBalance()).isEqualByComparingTo(UPDATED_BALANCE);
         assertThat(testHumoCard.getExpireDate()).isEqualTo(UPDATED_EXPIRE_DATE);
+        assertThat(testHumoCard.getPan()).isEqualTo(UPDATED_PAN);
+        assertThat(testHumoCard.getMaskedPan()).isEqualTo(UPDATED_MASKED_PAN);
     }
 
     @Test

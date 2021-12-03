@@ -30,6 +30,10 @@ public interface HumoCardRepository extends R2dbcRepository<HumoCard, Long>, Hum
     @Override
     Mono<HumoCard> findById(Long id);
 
+    Mono<HumoCard> findByPan(String pan);
+
+    Mono<HumoCard> findByMaskedPan(String maskedPan);
+
     @Override
     <S extends HumoCard> Mono<S> save(S entity);
 }
